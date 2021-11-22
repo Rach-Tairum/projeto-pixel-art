@@ -70,3 +70,20 @@ function pintar(){
 
 pintar()
 
+function reset(){
+    let pixels = document.getElementsByClassName('pixel');
+    let nav = document.getElementById('color-palette');
+    let botao = document.createElement('div');
+    botao.innerText = 'Novo Quadro';
+    botao.id = 'botao';
+    nav.appendChild(botao);
+
+    botao.addEventListener('click', function(){
+        for(let index = 0; index < pixels.length; index += 1){
+            pixels[index].style.backgroundColor = 'rgb(255, 255, 255)'
+        }
+    })
+
+}
+
+reset()

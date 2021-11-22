@@ -30,7 +30,7 @@
 
 #pixel-board{
     padding: 0;
-    margin: 0;
+    margin-bottom: 90px;
 }
 
 .pixel {
@@ -38,8 +38,9 @@
     width: 40px;
     height: 40px;
     display: inline-block;
-    margin: 0;
+    margin-top: 0;
     background-color: rgb(255, 255, 255);
+
 }
 br{
     margin: 0px;
@@ -47,4 +48,9 @@ br{
     height: 0;
     width: 0;
 
+}
+
+#botao {
+    display: inline-block;
+    
 }
