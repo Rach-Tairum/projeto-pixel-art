@@ -28,6 +28,11 @@
     background-color: mediumvioletred;
 }
 
+#pixel-board{
+    padding: 0;
+    margin: 0;
+}
+
 .pixel {
     border: 1px solid black;
     width: 40px;
@@ -39,5 +44,7 @@
 br{
     margin: 0px;
     padding: 0;
+    height: 0;
+    width: 0;
 
 }
