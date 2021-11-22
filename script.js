@@ -8,4 +8,7 @@ for(let i = 0; i < 5; i += 1){
     }   
     let quebra = document.createElement('br');
     local.appendChild(quebra)
-}
+};
+
+let cores = document.getElementsByClassName('color');
+cores[0].className = 'color selected';
