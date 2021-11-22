@@ -1,6 +1,7 @@
 let local = document.querySelector('#pixel-board');
 
-for(let i = 0; i < 5; i += 1){
+function criaGrade(){
+    for(let i = 0; i < 5; i += 1){
     for(let index = 0; index < 5; index += 1){
         let pixel = document.createElement('div');
         pixel.className = 'pixel'
@@ -9,6 +10,45 @@ for(let i = 0; i < 5; i += 1){
     let quebra = document.createElement('br');
     local.appendChild(quebra)
 };
+}
+criaGrade();
 
 let cores = document.getElementsByClassName('color');
 cores[0].className = 'color selected';
+
+let black = document.getElementById('black');
+let darkBlue = document.getElementById('darkblue');
+let green = document.getElementById('green');
+let darkPink = document.getElementById('mediumvioletred');
+
+function selecionaCirculo(){
+    black.addEventListener('click',function(){
+        black.className = 'color selected';
+        darkBlue.classList.remove('selected');
+        green.classList.remove('selected')
+        darkPink.classList.remove('selected')
+    })
+
+    darkBlue.addEventListener('click',function(){
+        darkBlue.className = 'color selected';
+        black.classList.remove('selected');
+        green.classList.remove('selected')
+        darkPink.classList.remove('selected')
+    })
+
+    green.addEventListener('click',function(){
+        green.className = 'color selected';
+        black.classList.remove('selected');
+        darkBlue.classList.remove('selected')
+        darkPink.classList.remove('selected')
+    })
+
+    darkPink.addEventListener('click',function(){
+        darkPink.className = 'color selected';
+        black.classList.remove('selected');
+        darkBlue.classList.remove('selected')
+        green.classList.remove('selected')
+    })
+}
+
+selecionaCirculo()
