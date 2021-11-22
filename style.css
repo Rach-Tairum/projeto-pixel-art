@@ -1,0 +1,37 @@
+#title{
+    text-align: center;
+};
+
+.color {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px;
+    margin: 30px;
+    border-radius: 50px;
+};
+
+/* .red {
+    background-color: red;
+};
+
+#darkblue {
+    background-color: darkblue;
+};
+
+#green {
+    background-color: green;
+};
+
+#mediumvioletred {
+    background-color: mediumvioletred;
+};
+
+#black {
+    background-color: black;
+};
+
+#yellow{
+    background-color: yellow;
+} */
