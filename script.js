@@ -1,4 +1,22 @@
+function criaOMainDoHTML(){
+    let main = document.getElementById('main');
+    let limpaQuadro = document.createElement('div');
+    limpaQuadro.innerText = 'Limpar';
+    limpaQuadro.id = 'clear-board';
+    main.appendChild(limpaQuadro);
+
+    let localQuadro = document.createElement('div');
+    localQuadro.id = 'pixel-board'
+    main.appendChild(localQuadro)
+}
+
+criaOMainDoHTML()
+
 let local = document.querySelector('#pixel-board');
+let black = document.getElementById('black');
+let darkBlue = document.getElementById('darkblue');
+let green = document.getElementById('green');
+let darkPink = document.getElementById('mediumvioletred');
 
 function criaGrade(){
     for(let i = 0; i < 5; i += 1){
@@ -16,11 +34,6 @@ criaGrade();
 
 let cores = document.getElementsByClassName('color');
 cores[0].className = 'color selected';
-
-let black = document.getElementById('black');
-let darkBlue = document.getElementById('darkblue');
-let green = document.getElementById('green');
-let darkPink = document.getElementById('mediumvioletred');
 
 function selecionaCirculo(){
     black.addEventListener('click',function(){
@@ -72,13 +85,9 @@ pintar()
 
 function reset(){
     let pixels = document.getElementsByClassName('pixel');
-    let nav = document.getElementById('color-palette');
-    let botao = document.createElement('div');
-    botao.innerText = 'Novo Quadro';
-    botao.id = 'botao';
-    nav.appendChild(botao);
+    let limpaQuadro = document.getElementById('clear-board')
 
-    botao.addEventListener('click', function(){
+    limpaQuadro.addEventListener('click', function(){
         for(let index = 0; index < pixels.length; index += 1){
             pixels[index].style.backgroundColor = 'rgb(255, 255, 255)'
         }
@@ -87,3 +96,46 @@ function reset(){
 }
 
 reset()
+
+
+
+function usuarioCriaGrade(){
+    let limpaQuadro = document.getElementById('clear-board')
+    let tamanhoQuadro = document.createElement('input')
+    tamanhoQuadro.placeholder = 'tamanho do quadro'
+    tamanhoQuadro.id = 'board-size'
+    tamanhoQuadro.min = 0
+    limpaQuadro.appendChild(tamanhoQuadro);
+
+    let novoQuadro = document.createElement('button');
+    novoQuadro.id = 'generate-board'
+    novoQuadro.innerHTML = 'VQV'
+    limpaQuadro.appendChild(novoQuadro)
+    
+
+    novoQuadro.addEventListener('click', function(){
+        if(tamanhoQuadro.value === ''){
+            alert('Board inválido!')
+        } else {
+            let pixels = document.querySelectorAll('pixel');
+            for(let i = 0; i < pixels.length; i += 1){
+                local.removeChild(pixels[i]);
+                console.log(local)
+            }
+
+        //     for(let i = 0; i < tamanhoQuadro.value; i += 1){
+        //       for(let index = 0; index < tamanhoQuadro.value; index += 1){
+        //         let pixel = document.createElement('div');
+        //         pixel.className = 'pixel'
+        //         local.appendChild(pixel)
+        //     }   
+
+        //     let quebra = document.createElement('br');
+        //     local.appendChild(quebra)
+        // }
+        
+    }
+    })
+    
+}
+usuarioCriaGrade()

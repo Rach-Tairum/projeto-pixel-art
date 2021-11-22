@@ -50,7 +50,14 @@ br{
 
 }
 
-#botao {
+#clear-board {
     display: inline-block;
-    
+    margin-bottom: 60px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+#board-size{
+    display: inline;
+    margin-left: 100px;
 }
