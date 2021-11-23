@@ -1,7 +1,28 @@
-#title{
-    text-align: center;
+body {
+    background-image: url('https://media.istockphoto.com/videos/retro-land-video-id1171564349?s=640x640');
 }
 
+
+/* Referências:
+https://blog.cisne.dev/texto-com-degrade-em-css-igual-a-esse-titulo/#:~:text=Adicionar%20um%20degrad%C3%AA,para%20baixo%20(%20to%20bottom%20).
+https://developer.mozilla.org/pt-BR/docs/Web/CSS/background-clip
+https://css-tricks.com/almanac/properties/b/background-clip/
+https://www.youtube.com/watch?v=ZAeJB3EMmq4
+https://blog.betrybe.com/css/css-gradient/ */
+#title{
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: 800;
+    font-size: 4em;
+    background-color: brown;
+    background-image: linear-gradient(to bottom, #F2FF49, #FF4242, #B3FFFC);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+#color-palette{
+    margin-left: 350px;
+}
 .color {
     border: 1px solid black;
     width: 50px;
@@ -54,10 +75,37 @@ br{
     display: inline-block;
     margin-bottom: 60px;
     margin-top: 20px;
-    margin-left: 30px;
+    margin-left: 480px;
+    background-color: #F2FF49;
+    margin-right: 30px;
+    padding-left: 50px;
+    padding-top: 10px;
+    padding-right: 20px;
+    color: #FF4242;
+    border-radius: 50px;
+    font-weight: 800;
+    font-family: 'Press Start 2P';
+    
 }
 
 #board-size{
     display: inline-block;
+    margin-left: 20px;
+    background-color: white;
+    padding: 5px 10px;
+
+}
+
+#pixel-board{
     margin-left: 100px;
+}
+
+#generate-board{
+    background-color: #F2FF49;
+    color: #FF4242;
+    border-color: #8ffaf6; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P';
 }
