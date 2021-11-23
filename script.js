@@ -73,7 +73,7 @@ function pintar(){
         pixels[index].addEventListener('click', function(event){
             for(let i = 0; i < cores.length; i += 1){
                 if(cores[i].className === 'color selected'){
-                    event.target.style.backgroundColor = cores[i].id
+                    event.target.style.backgroundColor = cores[i].style.backgroundColor
                 }
             }
         })
@@ -167,3 +167,16 @@ function usuarioCriaGrade(){
 })
 }
 usuarioCriaGrade()
+
+/* Referência:
+https://pt.stackoverflow.com/questions/493278/como-gerar-cores-hexadecimais-aleat%C3%B3rias-com-javascript
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Number/toString 
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/padStart */
+
+function corAleatoria(){
+    black.style.backgroundColor = 'black';
+    darkBlue.style.backgroundColor = '#' + parseInt(Math.random() * 0x1000000).toString(16).padStart(6,'0');
+    green.style.backgroundColor = '#' + parseInt(Math.random() * 0x1000000).toString(16).padStart(6,'0');
+    darkPink.style.backgroundColor = '#' + parseInt(Math.random() * 0x1000000).toString(16).padStart(6,'0');
+}
+corAleatoria()
