@@ -58,6 +58,6 @@ br{
 }
 
 #board-size{
-    display: inline;
+    display: inline-block;
     margin-left: 100px;
 }

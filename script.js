@@ -1,15 +1,14 @@
-function criaOMainDoHTML(){
+function criaOMainDoHTML() {
     let main = document.getElementById('main');
     let limpaQuadro = document.createElement('div');
-    limpaQuadro.innerText = 'Limpar';
     limpaQuadro.id = 'clear-board';
+    limpaQuadro.innerText = 'Limpar';
     main.appendChild(limpaQuadro);
 
     let localQuadro = document.createElement('div');
     localQuadro.id = 'pixel-board'
     main.appendChild(localQuadro)
 }
-
 criaOMainDoHTML()
 
 let local = document.querySelector('#pixel-board');
@@ -64,7 +63,6 @@ function selecionaCirculo(){
         green.classList.remove('selected');
     });
 }
-
 selecionaCirculo()
 
 
@@ -80,7 +78,6 @@ function pintar(){
         })
     }
 }
-
 pintar()
 
 function reset(){
@@ -94,7 +91,6 @@ function reset(){
     })
 
 }
-
 reset()
 
 
@@ -104,7 +100,9 @@ function usuarioCriaGrade(){
     let tamanhoQuadro = document.createElement('input')
     tamanhoQuadro.placeholder = 'tamanho do quadro'
     tamanhoQuadro.id = 'board-size'
-    tamanhoQuadro.min = 0
+    tamanhoQuadro.type = 'number'
+    tamanhoQuadro.min = 1
+    tamanhoQuadro.max = 50
     limpaQuadro.appendChild(tamanhoQuadro);
 
     let novoQuadro = document.createElement('button');
@@ -117,22 +115,18 @@ function usuarioCriaGrade(){
         if(tamanhoQuadro.value === ''){
             alert('Board inválido!')
         } else {
-            let pixels = document.querySelectorAll('pixel');
-            for(let i = 0; i < pixels.length; i += 1){
-                local.removeChild(pixels[i]);
-                console.log(local)
-            }
 
-        //     for(let i = 0; i < tamanhoQuadro.value; i += 1){
-        //       for(let index = 0; index < tamanhoQuadro.value; index += 1){
-        //         let pixel = document.createElement('div');
-        //         pixel.className = 'pixel'
-        //         local.appendChild(pixel)
-        //     }   
+            let count = tamanhoQuadro.value - 5
+            for(let i = 0; i < count; i += 1){
+              for(let index = 0; index < 5; index += 1){
+                let pixel = document.createElement('div');
+                pixel.className = 'pixel'
+                local.appendChild(pixel)
+            }   
 
-        //     let quebra = document.createElement('br');
-        //     local.appendChild(quebra)
-        // }
+            let quebra = document.createElement('br');
+            local.appendChild(quebra)
+        }
         
     }
     })
