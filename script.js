@@ -16,6 +16,7 @@ let black = document.getElementById('black');
 let darkBlue = document.getElementById('darkblue');
 let green = document.getElementById('green');
 let darkPink = document.getElementById('mediumvioletred');
+let pixels = document.getElementsByClassName('pixel');
 
 function criaGrade(){
     for(let i = 0; i < 5; i += 1){
@@ -67,7 +68,7 @@ selecionaCirculo()
 
 
 function pintar(){
-    let pixels = document.getElementsByClassName('pixel');
+    
     for(let index = 0; index < pixels.length; index += 1){
         pixels[index].addEventListener('click', function(event){
             for(let i = 0; i < cores.length; i += 1){
@@ -81,7 +82,7 @@ function pintar(){
 pintar()
 
 function reset(){
-    let pixels = document.getElementsByClassName('pixel');
+    
     let limpaQuadro = document.getElementById('clear-board')
 
     limpaQuadro.addEventListener('click', function(){
@@ -112,24 +113,57 @@ function usuarioCriaGrade(){
     
 
     novoQuadro.addEventListener('click', function(){
-        if(tamanhoQuadro.value === ''){
+        let board = tamanhoQuadro.value
+
+        if(board === '') {
             alert('Board inválido!')
-        } else {
 
-            let count = tamanhoQuadro.value - 5
-            for(let i = 0; i < count; i += 1){
-              for(let index = 0; index < 5; index += 1){
-                let pixel = document.createElement('div');
-                pixel.className = 'pixel'
-                local.appendChild(pixel)
-            }   
-
+        } else if(board < 5) {
+            local.innerHTML = '';
+            
+            for(let i = 0; i < 5; i += 1){
+                for(let index = 0; index < 5; index += 1){
+                    let pixel = document.createElement('div');
+                    pixel.className = 'pixel'
+                    pixel.addEventListener('click',pintar)
+                    local.appendChild(pixel)
+                }   
+        
             let quebra = document.createElement('br');
             local.appendChild(quebra)
-        }
+            }
+
+        } else if (board > 50){
+            local.innerHTML = '';
+            
+            for(let i = 0; i < 50; i += 1){
+                for(let index = 0; index < 50; index += 1){
+                    let pixel = document.createElement('div');
+                    pixel.className = 'pixel'
+                    pixel.addEventListener('click',pintar)
+                    local.appendChild(pixel)
+                }   
         
+            let quebra = document.createElement('br');
+            local.appendChild(quebra)
+            }
+
+    } else if (board >= 5 || board < 50) {
+        local.innerHTML = '';
+
+        for(let i = 0; i < board; i += 1){
+          for(let index = 0; index < board; index += 1){
+            let pixel = document.createElement('div');
+            pixel.className = 'pixel'
+            pixel.addEventListener('click',pintar)
+            local.appendChild(pixel)
+            }   
+
+        let quebra = document.createElement('br');
+        local.appendChild(quebra)
+        }
     }
-    })
     
+})
 }
 usuarioCriaGrade()
