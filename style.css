@@ -50,26 +50,27 @@ https://blog.betrybe.com/css/css-gradient/ */
 }
 
 #pixel-board{
+    border: 3px solid black; 
+    /*width: 220px;*/
+   
+}
+.linha{
+    margin: 0;
     padding: 0;
-    margin-bottom: 90px;
+    height: 40px;
 }
 
 .pixel {
     border: 1px solid black;
     width: 40px;
     height: 40px;
+    background-color: rgb(255, 255, 255); 
+    /*float: left;*/
     display: inline-block;
-    margin-top: 0;
-    background-color: rgb(255, 255, 255);
+    margin: 0;
 
 }
-br{
-    margin: 0px;
-    padding: 0;
-    height: 0;
-    width: 0;
 
-}
 
 #clear-board {
     display: inline-block;

@@ -20,15 +20,18 @@ let pixels = document.getElementsByClassName('pixel');
 
 function criaGrade(){
     for(let i = 0; i < 5; i += 1){
+        let linhas = document.createElement('div');
+            linhas.className = 'linha'
+            local.appendChild(linhas)
+            let linha = document.querySelectorAll('.linha')
+            
         for(let index = 0; index < 5; index += 1){
             let pixel = document.createElement('div');
             pixel.className = 'pixel'
-            local.appendChild(pixel)
+            linha[i].appendChild(pixel)
+            console.log(linha[i])
         }   
-
-    let quebra = document.createElement('br');
-    local.appendChild(quebra)
-};
+   }
 }
 criaGrade();
 
@@ -120,48 +123,39 @@ function usuarioCriaGrade(){
 
         } else if(board < 5) {
             local.innerHTML = '';
-            
-            for(let i = 0; i < 5; i += 1){
-                for(let index = 0; index < 5; index += 1){
-                    let pixel = document.createElement('div');
-                    pixel.className = 'pixel'
-                    pixel.addEventListener('click',pintar)
-                    local.appendChild(pixel)
-                }   
-        
-            let quebra = document.createElement('br');
-            local.appendChild(quebra)
-            }
+            criaGrade()
 
         } else if (board > 50){
             local.innerHTML = '';
             
             for(let i = 0; i < 50; i += 1){
+                let linhas = document.createElement('div');
+                    linhas.className = 'linha'
+                    local.appendChild(linhas)
+                    let linha = document.querySelectorAll('.linha')
+                    
                 for(let index = 0; index < 50; index += 1){
                     let pixel = document.createElement('div');
                     pixel.className = 'pixel'
-                    pixel.addEventListener('click',pintar)
-                    local.appendChild(pixel)
+                    linha[i].appendChild(pixel)
                 }   
-        
-            let quebra = document.createElement('br');
-            local.appendChild(quebra)
-            }
+           }
 
     } else if (board >= 5 || board < 50) {
         local.innerHTML = '';
 
         for(let i = 0; i < board; i += 1){
-          for(let index = 0; index < board; index += 1){
-            let pixel = document.createElement('div');
-            pixel.className = 'pixel'
-            pixel.addEventListener('click',pintar)
-            local.appendChild(pixel)
+            let linhas = document.createElement('div');
+                linhas.className = 'linha'
+                local.appendChild(linhas)
+                let linha = document.querySelectorAll('.linha')
+                
+            for(let index = 0; index < board; index += 1){
+                let pixel = document.createElement('div');
+                pixel.className = 'pixel'
+                linha[i].appendChild(pixel)
             }   
-
-        let quebra = document.createElement('br');
-        local.appendChild(quebra)
-        }
+       }
     }
     
 })
