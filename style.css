@@ -49,11 +49,7 @@ https://blog.betrybe.com/css/css-gradient/ */
     background-color: mediumvioletred;
 }
 
-#pixel-board{
-    border: 3px solid black; 
-    /*width: 220px;*/
-   
-}
+
 .linha{
     margin: 0;
     padding: 0;
